@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demand Creation - David Huang</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --google-blue: #4285F4;
+            --google-red: #EA4335;
+            --google-yellow: #FBBC05;
+            --google-green: #34A853;
+            --google-grey: #F8F9FA;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #ffffff;
+            color: #3C4043;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .chrome-header {
+            border-bottom: 1px solid #dadce0;
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .section-card {
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
+            opacity: 0;
+            transform: translateY(60px);
+        }
+
+        .section-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .google-shadow {
+            box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+        }
+
+        .accent-bar {
+            height: 4px;
+            width: 100%;
+            display: flex;
+        }
+
+        .bar-blue { background: var(--google-blue); flex: 1; }
+        .bar-red { background: var(--google-red); flex: 1; }
+        .bar-yellow { background: var(--google-yellow); flex: 1; }
+        .bar-green { background: var(--google-green); flex: 1; }
+
+        .hero-gradient {
+            background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+        }
+
+        .pulse {
+            animation: pulse-animation 2s infinite;
+        }
+
+        @keyframes pulse-animation {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .image-frame {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            background: #fff;
+            max-width: 100%;
+            display: inline-block;
+            border: 8px solid #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Chrome Style Header -->
+    <header class="chrome-header">
+        <div class="accent-bar">
+            <div class="bar-blue"></div>
+            <div class="bar-red"></div>
+            <div class="bar-yellow"></div>
+            <div class="bar-green"></div>
+        </div>
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="#4285F4" d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M12,20c-4.41,0-8-3.59-8-8s3.59-8,8-8s8,3.59,8,8 S16.41,20,12,20z"/>
+                </svg>
+                <span class="text-xl font-medium tracking-tight text-gray-700">Demand Creation Workshop</span>
+            </div>
+            <div class="text-sm text-gray-500 font-normal">
+                Speaker: David Huang
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient min-h-[90vh] flex flex-col justify-center items-center text-center px-6">
+        <h1 class="text-5xl md:text-8xl font-bold mb-8 tracking-tight">
+            什麼是 <span style="color: var(--google-blue)">Demand</span>?
+        </h1>
+        <p class="text-xl md:text-3xl text-gray-500 max-w-3xl leading-relaxed font-light">
+            這不是一場關於產品規格的課程
+        </p>
+        <div class="mt-16">
+            <a href="#start" class="bg-blue-600 text-white px-10 py-4 rounded-full text-lg font-medium hover:bg-blue-700 transition google-shadow">
+                開始探索
+            </a>
+        </div>
+    </section>
+
+    <!-- Main Content with extreme spacing (space-y-96) -->
+    <main id="start" class="container mx-auto px-6 py-48 space-y-96">
+        
+        <!-- Section 1: Definition -->
+        <section class="section-card max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-16">
+            <div class="flex-1">
+                <h2 class="text-4xl font-bold mb-8" style="color: var(--google-red)">Demand & Creation</h2>
+                <div class="space-y-6 text-xl text-gray-600 leading-relaxed">
+                    <p><strong>什麼是 Demand？為什麼需要 Creation？</strong></p>
+                    <p>Demand 不僅僅是客戶的一張訂單<br>而是他們面臨但尚未察覺的<strong>『痛點』</strong></p>
+                </div>
+            </div>
+            <div class="flex-1 bg-red-50 p-16 rounded-[3rem] border-2 border-red-100 flex justify-center">
+                <span class="text-9xl">💡</span>
+            </div>
+        </section>
+
+        <!-- Section 2: Passion & Discussion -->
+        <section class="section-card max-w-5xl mx-auto space-y-64">
+            <div class="flex flex-col md:flex-row-reverse items-center gap-16">
+                <div class="flex-1">
+                    <h2 class="text-4xl font-bold mb-8" style="color: var(--google-yellow)">你還有熱情嗎？</h2>
+                    <div class="space-y-6 text-xl text-gray-600 leading-relaxed">
+                        <p>在日復一日的報價與規格比對中，<br>你是否早已失去Design-In的動力？</p>
+                        <p><strong>熱情</strong>是唯一的燃料。</p>
+                    </div>
+                </div>
+                <div class="flex-1 bg-yellow-50 p-16 rounded-[3rem] border-2 border-yellow-100 flex justify-center">
+                    <span class="text-9xl pulse">🔥</span>
+                </div>
+            </div>
+
+            <!-- Discussion Topic -->
+            <div class="bg-gray-50 border border-gray-200 rounded-[2.5rem] p-12 mt-128 google-shadow">
+                <div class="flex items-start space-x-6">
+                    <div class="bg-yellow-400 p-4 rounded-2xl text-white shadow-lg">
+                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M8 10h.01M12 10h.01M16 10h.01M21 16c0 1.1-.9 2-2 2H5l-4 4V4c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2v12z"></path>
+                        </svg>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold mb-4">分享你的 Demand Creation 經驗</h3>
+                        <p class="text-lg text-gray-500 mb-8 leading-relaxed">有沒有那種「本來沒機會，但最後卻因為你的切入點而成功」的時刻？</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                                <span class="text-base font-bold text-yellow-600 block mb-2">思考點 1</span>
+                                <p class="text-base text-gray-500">你是如何發現客戶那個「隱藏需求」的？</p>
+                            </div>
+                            <div class="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                                <span class="text-base font-bold text-yellow-600 block mb-2">思考點 2</span>
+                                <p class="text-base text-gray-500">過程中最關鍵的「行動」是什麼？</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
+        <!-- Section 3: Where is IC -->
+        <section class="section-card max-w-5xl mx-auto text-center space-y-12">
+            <h2 class="text-4xl font-bold" style="color: var(--google-blue)">Demand 在哪裡？你要怎麼找？</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                <div class="p-10 border border-gray-200 rounded-[2rem] hover:bg-blue-50 transition-all duration-300 hover:scale-[1.02]">
+                    <h3 class="text-2xl font-bold mb-4 text-blue-600">跳出產品地圖 (Roadmap)</h3>
+                    <p class="text-lg text-gray-500 leading-relaxed">IC 不在紙上，它在客戶的應用場景裡。<br>規格再強，沒解決問題也沒用。</p>
+                </div>
+                <div class="p-10 border border-gray-200 rounded-[2rem] hover:bg-blue-50 transition-all duration-300 hover:scale-[1.02]">
+                    <h3 class="text-2xl font-bold mb-4 text-blue-600">對症下藥</h3>
+                    <p class="text-lg text-gray-500 leading-relaxed">別急著介紹我們有什麼，<br>要觀察客戶的產品「還缺少什麼」。<br>在那裡你會找到 IC 的出路。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Technology -->
+        <section class="section-card max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-16">
+            <div class="flex-1">
+                <h2 class="text-4xl font-bold mb-8" style="color: var(--google-green)">三把開門的鑰匙</h2>
+                <div class="space-y-6 text-xl text-gray-600 leading-relaxed">
+                    <p>【洞察】不只是觀察，而是預判趨勢 <br>【提問】好問題比好答案更能觸發設計變更 <br>【技術】與 R&D 建立信任的唯一共同語言 </p>
+                    
+                </div>
+            </div>
+            <div class="flex-1 bg-green-50 p-16 rounded-[3rem] border-2 border-green-100 flex justify-center">
+                <span class="text-9xl">🛠️</span>
+            </div>
+        </section>
+
+
+        <!-- Section 5: Teamwork / Slam Dunk Image -->
+        <section id="finale" class="section-card max-w-5xl mx-auto text-center space-y-16 pb-48">
+            <div class="space-y-6">
+                <h2 class="text-5xl font-bold">Sales & FAE</h2>
+                <p class="text-2xl text-gray-400 italic font-light">就像場上的宮城與櫻木，完美配合。</p>
+            </div>
+            
+            <div class="flex flex-col items-center">
+                <div class="image-frame">
+                    <img src="slamdunk.jpg" alt="Q版宮城與櫻木合作" class="max-w-lg w-full h-auto">
+                </div>
+            </div>           
+                <div class="mt-8 border-t border-gray-200 pt-64 inline-block w-full">
+                    <p class="text-4xl font-bold text-gray-800">What are you going to do next?</p>
+                    <p class="text-sm text-gray-400 mt-1 uppercase tracking-widest font-medium"></p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-gray-200 py-24 text-center text-gray-400 text-sm">
+        <div class="container mx-auto px-6">
+            <p>&copy; WT Microelectronics | BU2 Sales Training</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll Animation logic
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
